@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../static/sample_css.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <ol>
+    <p style="font-family: 'Trocchi', serif; font-size: 70%; color: green;font-weight: normal; line-height: 48px; margin: 0;" >Response time: {{g.request_time()}}</p>
+    {% for i in entries %}
+          <button type="button" class="collapsible"> {{ i[0] }}  </button>
+        <div class="content position:absolute">
+            {{i[2] | safe}}
+        </div>
+        <br>
+    {% endfor %}
+      </ol>
+
+</body>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</html>
