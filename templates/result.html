@@ -7,7 +7,6 @@
 </head>
 <body>
     <ol>
-    <p style="font-family: 'Trocchi', serif; font-size: 70%; color: green;font-weight: normal; line-height: 48px; margin: 0;" >Response time: {{g.request_time()}}</p>
     {% for i in entries %}
           <button type="button" class="collapsible"> {{ i[0] }}  </button>
         <div class="content position:absolute">
@@ -15,6 +14,7 @@
         </div>
         <br>
     {% endfor %}
+    <p style="font-family: 'Trocchi', serif; font-size: 70%; color: green;font-weight: normal; line-height: 48px; margin: 0;" >Response time: {{g.request_time()}}</p>
       </ol>
 
 </body>
