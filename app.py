@@ -38,7 +38,8 @@ def post_handle():
             f = f.decode('utf8')
             content = json.loads(f)
             if 'error_id' in content:
-                return "Ops! Max quota reached"
+                print("Error:+\n" + str(content))
+                return "Ops! Something unexpected happens. Error has been logged in terminal."
             response = content['items']
             html_body_maker(title_list, response)
             title_list.sort(key=_takeSecond)
